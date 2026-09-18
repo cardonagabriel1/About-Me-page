@@ -1,0 +1,31 @@
+/* 3-Column Layout */
+.column-container {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.column {
+  flex: 1;
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+/* Favorites Teaser Section */
+.favorites-intro {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #e3f2fd;
+  border-left: 5px solid #2482bd;
+}
+
+/* Nav links overwrite for standard buttons */
+#nav a:link, #nav a:visited {
+  color: #ffffff;
+}
+
+#nav a:hover {
+  color: #ffd700;
+}

@@ -2,53 +2,245 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About Me - Gabriel Cardona</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favorites - Gabriel Cardona</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Lightbox Modal CSS */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .gallery-grid img:hover {
+      opacity: 0.8;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 50px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+      position: relative;
+      margin: auto;
+      padding: 0;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      color: white;
+    }
+
+    .modal-content img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: contain;
+    }
+
+    .close {
+      color: white;
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #999;
+      text-decoration: none;
+    }
+
+    .caption-container {
+      padding: 10px 16px;
+      background-color: #222;
+      border-radius: 0 0 6px 6px;
+    }
+  </style>
 </head>
 <body>
 
-  <div id="header">
+  <!-- Banner -->
+  <header id="header">
     <div id="title">
-      <h1>About Me Page</h1>
+      <h1>Gabriel Cardona's Favorites</h1>
+      <p class="tagline">Personal Website & Portfolio</p>
     </div>
-  </div>
+  </header>
 
-  <div id="nav">
-    <a href="#">Home</a> - 
-    <a href="favorites.html" id="nav">Favorite</a> - 
-    <a href="#">Contact</a>
-  </div>
+  <!-- Navigation -->
+  <nav id="nav">
+    <a href="index.html">Home</a> - 
+    <a href="about.html">About</a> - 
+    <a href="favorites.html">Favorites</a> - 
+    <a href="contact.html">Contact</a>
+  </nav>
 
-  <div id="content">
-    <h2>Gabriel Cardona</h2> 
-    
-    <h3>My favorite hobbies</h3>
-    <p>Some of my favorite hobbies include playing soccer, collecting hot wheels, playing video games, and listening to music. These are things I enjoy doing, especially soccer. Soccer is my passion and it's something I've been playing since I've been 4 years old. I started collecting hot wheels a few years ago and I really enjoy collecting cars I find cool or finding rare items.</p>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8wkL1dqrxSDnG-IVm9CHXuiM7WX5wKP0OclUI4ireDft3wOg7m0udRjs&s=10" alt="Dope celebration"> 
+  <!-- Main Content -->
+  <main id="content">
 
-    <h4>My favorite movies</h4>
-    <p>My top 5 movies include The Godfather, The Godfather part II, Hacksaw Ridge, Casino, and The Dark Knight. Most of these movies were shown to me by my dad and I loved them when I first watched them. The Godfather movies to me are masterpieces and Hacksaw Ridge is a very emotional movie to me. I really like the Dark Knight because of Batman and an honorable mention would be the Spider Man Brand New day or Avengers Infinity War and Endgame. As well as Spider-Man(Tobey Maguire).</p>
-    <img src="https://images.wsj.net/im-504440?width=700&height=431" alt="Iconic scene"> 
+    <section>
+      <h2>My Favorite Things</h2>
+      <p>Welcome to my personal favorites showcase! On this page, you can explore the movies, music artists, and food dishes that I enjoy the most in my daily life. Click on any picture in the gallery below to open a larger view with more details about why it is a top choice.</p>
+    </section>
 
-    <h5>My favorite music</h5>
-    <p>My favorite music genre is reggaeton, but I like to listen to a little bit of everything. I really like to listen to corridos tumbados, but I also really like listening to indie music like The Marias and Mac Demarco. I also really Radiohead and I also dabble with old music as well, like a lot of music from the 70s and 60s to 80s that my dad has shown me. My favorite artist is Daddy Yankee, but right now I'm listening to a lot of Rauw Alejandro, Bad Bunny, and Feid.</p>
-    <img src="https://preview.redd.it/rauw-alejandro-or-feid-whos-closer-to-bad-bunny-and-karol-v0-4sjq29pu2one1.jpeg?auto=webp&s=f7b816229f1dad049c532343d9841dc661ccd33c" alt="Rauw and Feid">
-    <img src="https://i.scdn.co/image/ab6761610000517481f47f44084e0a09b5f0fa13" alt="King del trap">
+    <hr>
 
-    <h6>My favorite foods</h6>
-    <ul>
-      <li>Pozole</li>
-      <li>QuesaBirrias</li>
-      <li>Carne Asada Fries</li>
-    </ul>
-    <img src="https://s3-media0.fl.yelpcdn.com/bphoto/oBCmqwWChVg6rZU-0tFECQ/l.jpg" alt="Amazing food"> 
-    <img src="https://hips.hearstapps.com/hmg-prod/images/pozole-index-655b86b9eeb3f.jpg?crop=0.502xw:1.00xh;0.0561xw,0&resize=1200:*" alt="Pozole">
-    <img src="Gabrielmeetingtiktoker.JPG" class="profile-pic" alt="Gabriel meeting tiktoker">
-  </div>
+    <section>
+      <h3>Categorized Favorites</h3>
+      
+      <h4>1. Favorite Movies</h4>
+      <ul>
+        <li><strong>The Godfather & The Godfather Part II</strong> – Absolute cinematic masterpieces that I love watching with my dad. Check out film reviews on <a href="https://www.imdb.com" target="_blank" rel="noopener noreferrer">IMDb</a>.</li>
+        <li><strong>Hacksaw Ridge</strong> – A deeply emotional war film that hits hard every time.</li>
+        <li><strong>The Dark Knight</strong> – The best Batman superhero film with an unforgettable Joker performance.</li>
+      </ul>
 
-  <div id="footer">
+      <h4>2. Favorite Music</h4>
+      <ul>
+        <li><strong>Daddy Yankee</strong> – My absolute favorite artist and the king of reggaeton. Listen to his top tracks on <a href="https://www.spotify.com" target="_blank" rel="noopener noreferrer">Spotify</a>.</li>
+        <li><strong>Rauw Alejandro & Feid</strong> – Two of my current favorite Latin artists to listen to right now.</li>
+        <li><strong>The Marías & Mac DeMarco</strong> – Great indie artists I listen to when chilling. Read more about indie music on <a href="https://www.pitchfork.com" target="_blank" rel="noopener noreferrer">Pitchfork</a>.</li>
+      </ul>
+
+      <h4>3. Favorite Foods</h4>
+      <ul>
+        <li><strong>Pozole</strong> – Traditional, comforting, and packed with flavor.</li>
+        <li><strong>Quesabirrias</strong> – Cheesy, savory, and amazing with consomé dipping broth.</li>
+        <li><strong>Carne Asada Fries</strong> – The ultimate comfort food with melted cheese and guacamole.</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <!-- Lightbox Modal adapted from W3Schools: https://www.w3schools.com/howto/howto_js_lightbox.asp -->
+    <section>
+      <h3>Interactive Image Gallery</h3>
+      <p><em>Click any image to view it in full size.</em></p>
+
+      <div class="gallery-grid">
+        <img src="https://images.wsj.net/im-504440?width=700&height=431" alt="The Godfather scene" onclick="openModal();currentSlide(1)">
+        <img src="https://m.media-amazon.com/images/M/MV5BMjQ1NjM3MTQwNV5BMl5BanBnXkFtZTgwMDg3MzA1OTE@._V1_.jpg" alt="Hacksaw Ridge movie poster" onclick="openModal();currentSlide(2)">
+        <img src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg" alt="The Dark Knight Batman poster" onclick="openModal();currentSlide(3)">
+        
+        <img src="https://i.scdn.co/image/ab6761610000517481f47f44084e0a09b5f0fa13" alt="Daddy Yankee portrait" onclick="openModal();currentSlide(4)">
+        <img src="https://preview.redd.it/rauw-alejandro-or-feid-whos-closer-to-bad-bunny-and-karol-v0-4sjq29pu2one1.jpeg?auto=webp&s=f7b816229f1dad049c532343d9841dc661ccd33c" alt="Rauw Alejandro and Feid" onclick="openModal();currentSlide(5)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Mac_DeMarco_2017.jpg" alt="Mac DeMarco live" onclick="openModal();currentSlide(6)">
+        
+        <img src="https://hips.hearstapps.com/hmg-prod/images/pozole-index-655b86b9eeb3f.jpg?crop=0.502xw:1.00xh;0.0561xw,0&resize=1200:*" alt="Bowl of Pozole" onclick="openModal();currentSlide(7)">
+        <img src="https://s3-media0.fl.yelpcdn.com/bphoto/oBCmqwWChVg6rZU-0tFECQ/l.jpg" alt="Carne Asada Fries plate" onclick="openModal();currentSlide(8)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8wkL1dqrxSDnG-IVm9CHXuiM7WX5wKP0OclUI4ireDft3wOg7m0udRjs&s=10" alt="Soccer player celebration" onclick="openModal();currentSlide(9)">
+      </div>
+
+      <!-- Lightbox Modal Box -->
+      <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+
+          <div class="mySlides">
+            <img src="https://images.wsj.net/im-504440?width=700&height=431" alt="The Godfather scene">
+            <div class="caption-container"><p>The Godfather: My favorite film of all time because of its legendary storytelling and connection with my dad.</p></div>
+          </div>
+
+          <div class="mySlides">
+            <img src="https://m.media-amazon.com/images/M/MV5BMjQ1NjM3MTQwNV5BMl5BanBnXkFtZTgwMDg3MzA1OTE@._V1_.jpg" alt="Hacksaw Ridge movie poster">
+            <div class="caption-container"><p>Hacksaw Ridge: An incredibly moving war film that demonstrates bravery and conviction.</p></div>
+          </div>
+
+          <div class="mySlides">
+            <img src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg" alt="The Dark Knight Batman poster">
+            <div class="caption-container"><p>The Dark Knight: The undisputed best superhero movie with iconic performances.</p></div>
+          </div>
+
+          <div class="mySlides">
+            <img src="https://i.scdn.co/image/ab6761610000517481f47f44084e0a09b5f0fa13" alt="Daddy Yankee portrait">
+            <div class="caption-container"><p>Daddy Yankee: The legend who defined reggaeton and my top listened-to artist.</p></div>
+          </div>
+
+          <div class="mySlides">
+            <img src="https://preview.redd.it/rauw-alejandro-or-feid-whos-closer-to-bad-bunny-and-karol-v0-4sjq29pu2one1.jpeg?auto=webp&s=f7b816229f1dad049c532343d9841dc661ccd33c" alt="Rauw Alejandro and Feid">
+            <div class="caption-container"><p>Rauw & Feid: Two modern urban artists constantly on heavy rotation on my playlists.</p></div>
+          </div>
+
+          <div class="mySlides">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Mac_DeMarco_2017.jpg" alt="Mac DeMarco live">
+            <div class="caption-container"><p>Mac DeMarco: My favorite indie artist for chill, relaxed vibes.</p></div>
+          </div>
+
+          <div class="mySlides">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/pozole-index-655b86b9eeb3f.jpg?crop=0.502xw:1.00xh;0.0561xw,0&resize=1200:*" alt="Bowl of Pozole">
+            <div class="caption-container"><p>Pozole: My top classic Mexican dish that reminds me of family gatherings.</p></div>
+          </div>
+
+          <div class="mySlides">
+            <img src="https://s3-media0.fl.yelpcdn.com/bphoto/oBCmqwWChVg6rZU-0tFECQ/l.jpg" alt="Carne Asada Fries plate">
+            <div class="caption-container"><p>Carne Asada Fries: Hands down my favorite quick food bite after soccer games.</p></div>
+          </div>
+
+          <div class="mySlides">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8wkL1dqrxSDnG-IVm9CHXuiM7WX5wKP0OclUI4ireDft3wOg7m0udRjs&s=10" alt="Soccer player celebration">
+            <div class="caption-container"><p>Soccer: My favorite sport and main passion since age 4.</p></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
     Copyright &copy; 2026 Gabriel Cardona
-  </div>
+  </footer>
+
+  <!-- Lightbox JavaScript -->
+  <script>
+    function openModal() {
+      document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+
+    var slideIndex = 1;
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      slides[slideIndex-1].style.display = "block";
+    }
+  </script>
 
 </body>
 </html>

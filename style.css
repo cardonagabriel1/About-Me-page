@@ -1,31 +1,234 @@
-/* 3-Column Layout */
-.column-container {
-  display: flex;
-  gap: 20px;
-  margin: 20px 0;
+@charset "UTF-8";
+/* CSS Document */
+
+/* Base & Typography */
+h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 40px;
+  text-align: center;
 }
 
-.column {
-  flex: 1;
-  background-color: #f4f4f4;
+ul {
+  font-size: 36px;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #932020;
+  color: black;
+  background-image: url("images/bg.png");
+  background-size: 200px;
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto 0 auto;
+}
+
+img {
+  float: right;
+}
+
+/* Header & Navigation */
+#header {
+  background-image: url("images/hero.jpg");
+  text-align: center;
+  color: #ffffff;
+  height: 150px;
+  background-repeat: no-repeat;
+  padding: 20px 25px 15px 25px;
+  background-position: center;
+}
+
+#content {
+
+}
+
+#nav {
+  background-color: #d5c7ad;
   padding: 15px;
-  border-radius: 6px;
-  border: 1px solid #ddd;
+  text-align: center;
+}
+
+/* Navigation Links */
+a:link {
+  color: #2d2f24;
+  background-color: floralwhite;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #8b8f76;
+}
+
+a:hover {
+  color: #ffffff;
+  background-color: darkslategray;
+}
+
+a:active {
+  color: #f1ead8;
+}
+
+/* Column Layouts */
+.column-container {
+  display: flex;
+  gap: 10px;
+  margin: 5px 0;
+}
+
+.onethirdcolumn {
+  background-color: #f1ead8;
+  margin: 5px;
+  padding: 5px;
+  width: 31.3%;
+  float: left;
 }
 
 /* Favorites Teaser Section */
 .favorites-intro {
   margin-top: 30px;
   padding: 15px;
-  background-color: #e3f2fd;
-  border-left: 5px solid #2482bd;
+  background-color: #f1ead8;
+  border-left: 5px solid #d5c7ad;
 }
 
-/* Nav links overwrite for standard buttons */
-#nav a:link, #nav a:visited {
-  color: #ffffff;
+/* Figures & Images */
+figure {
+  border: 1px #cccccc solid;
+  padding: 4px;
+  margin: auto;
 }
 
-#nav a:hover {
-  color: #ffd700;
+figcaption {
+  background-color: black;
+  color: white;
+  font-style: italic;
+  padding: 2px;
+  text-align: center;
+}
+
+/* Modal Gallery Grid System */
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 15%;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+/* Modal (Lightbox) Structure */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+/* Modal Controls & Captions */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+img.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

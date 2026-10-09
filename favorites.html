@@ -5,6 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Favorites - Gabriel Cardona</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Gallery Grid Row & Column Fixes */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -8px 15px -8px;
+    }
+
+    .column {
+      flex: 25%;
+      max-width: 25%;
+      padding: 0 8px;
+      box-sizing: border-box;
+    }
+
+    .column img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 4px;
+      cursor: pointer;
+      display: block;
+    }
+
+    /* Lightbox Modal & Slide Adjustments */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 40px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+      position: relative;
+      margin: auto;
+      padding: 0;
+      width: 90%;
+      max-width: 900px;
+      text-align: center;
+    }
+
+    .mySlides img {
+      max-width: 100%;
+      max-height: 60vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      margin: 0 auto;
+      display: block;
+    }
+
+    /* Modal Thumbnail Bar */
+    .modal-thumbnails {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px;
+      margin-top: 10px;
+    }
+
+    .modal-thumbnails .column {
+      flex: none;
+      width: 10%;
+      max-width: 100px;
+      padding: 0;
+    }
+
+    .modal-thumbnails .column img {
+      height: 50px;
+      object-fit: cover;
+    }
+  </style>
 </head>
 <body>
 
@@ -27,7 +105,7 @@
   <!-- Main Content -->
   <div id="content">
     <h2>Favorites:</h2> 
-    <p>Welcome to my personal favorites showcase! On this page, you can explore the movies, music artists, and food dishes that I enjoy the most in my daily life. Click on any picture in the gallery below to open up a larger gallery view.</p>
+    <p>Welcome to my personal favorites showcase! On this page, you can explore the movies, music artists, and food dishes that I enjoy the most in my daily life. Click on any picture in the gallery below to open a larger gallery view.</p>
     <p>&nbsp;</p>
 
     <section>
@@ -60,31 +138,37 @@
     <!-- Images used to open the lightbox -->
     <div class="row">
       <div class="column">
-        <img src="https://images.wsj.net/im-504440?width=700&height=431" onclick="openModal();currentSlide(1)" class="hover-shadow" alt="The Godfather scene">
+        <img src="https://m.media-amazon.com/images/M/MV5BNGEwMTExEWEtOTc2MS00M2ZmLWExN2UtZjA3MDE2M2E3Yzc4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow" alt="The Godfather scene">
       </div>
       <div class="column">
-        <img src="https://upload.wikimedia.org/wikipedia/en/8/8a/Hacksaw_Ridge_poster.png" onclick="openModal();currentSlide(2)" class="hover-shadow" alt="Hacksaw Ridge movie poster">
+        <img src="https://m.media-amazon.com/images/M/MV5BMjA1Nzk0OTM2OF5BMl5BanBnXkFtZTgwNjU2NjEwOTE@._V1_FMjpg_UX1000_.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow" alt="Hacksaw Ridge movie poster">
       </div>
       <div class="column">
-        <img src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow" alt="The Dark Knight Batman poster">
+        <img src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UX1000_.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow" alt="The Dark Knight Batman poster">
       </div>
       <div class="column">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Daddy_Yankee_2018.jpg/800px-Daddy_Yankee_2018.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow" alt="Daddy Yankee portrait">
+        <img src="https://i.scdn.co/image/ab6761610000e5eb2d53bf3bf334f59e9c8f2c33" onclick="openModal();currentSlide(4)" class="hover-shadow" alt="Daddy Yankee portrait">
       </div>
     </div>
-    <br>
+
     <div class="row">
       <div class="column">
-        <img src="https://preview.redd.it/rauw-alejandro-or-feid-whos-closer-to-bad-bunny-and-karol-v0-4sjq29pu2one1.jpeg?auto=webp&s=f7b816229f1dad049c532343d9841dc661ccd33c" onclick="openModal();currentSlide(5)" class="hover-shadow" alt="Rauw Alejandro and Feid">
+        <img src="https://i.scdn.co/image/ab6761610000e5eb981ebef7491b61c9441e8c75" onclick="openModal();currentSlide(5)" class="hover-shadow" alt="Rauw Alejandro and Feid">
       </div>
       <div class="column">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Mac_DeMarco_live_2013_%28cropped%29.jpg/800px-Mac_DeMarco_live_2013_%28cropped%29.jpg" onclick="openModal();currentSlide(6)" class="hover-shadow" alt="Mac DeMarco live">
+        <img src="https://i.scdn.co/image/ab6761610000e5eb4f4640bfcc6c8c4f03947b74" onclick="openModal();currentSlide(6)" class="hover-shadow" alt="Mac DeMarco live">
       </div>
       <div class="column">
-        <img src="https://hips.hearstapps.com/hmg-prod/images/pozole-index-655b86b9eeb3f.jpg?crop=0.502xw:1.00xh;0.0561xw,0&resize=1200:*" onclick="openModal();currentSlide(7)" class="hover-shadow" alt="Bowl of Pozole">
+        <img src="https://images.squarespace-cdn.com/content/v1/52d881e3e4b09335f63934d4/1612457813359-V9L15US8G45SR17E0RDR/Pozole+Rojo+2.jpg" onclick="openModal();currentSlide(7)" class="hover-shadow" alt="Bowl of Pozole">
       </div>
       <div class="column">
-        <img src="https://s3-media0.fl.yelpcdn.com/bphoto/oBCmqwWChVg6rZU-0tFECQ/l.jpg" onclick="openModal();currentSlide(8)" class="hover-shadow" alt="Carne Asada Fries plate">
+        <img src="https://www.sandiegouniontribune.com/wp-content/uploads/2023/10/SDU-L-CARNE-ASADA-FRIES-01.jpg" onclick="openModal();currentSlide(8)" class="hover-shadow" alt="Carne Asada Fries plate">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/soccer-player-kicking-ball-in-stadium-getty-images.jpg" onclick="openModal();currentSlide(9)" class="hover-shadow" alt="Soccer player celebration">
       </div>
     </div>
 
@@ -94,43 +178,48 @@
       <div class="modal-content">
 
         <div class="mySlides">
-          <div class="numbertext">1 / 8</div>
-          <img src="https://images.wsj.net/im-504440?width=700&height=431" style="width:100%" alt="The Godfather scene">
+          <div class="numbertext">1 / 9</div>
+          <img src="https://m.media-amazon.com/images/M/MV5BNGEwMTExEWEtOTc2MS00M2ZmLWExN2UtZjA3MDE2M2E3Yzc4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="The Godfather scene">
         </div>
 
         <div class="mySlides">
-          <div class="numbertext">2 / 8</div>
-          <img src="https://upload.wikimedia.org/wikipedia/en/8/8a/Hacksaw_Ridge_poster.png" style="width:100%" alt="Hacksaw Ridge movie poster">
+          <div class="numbertext">2 / 9</div>
+          <img src="https://m.media-amazon.com/images/M/MV5BMjA1Nzk0OTM2OF5BMl5BanBnXkFtZTgwNjU2NjEwOTE@._V1_FMjpg_UX1000_.jpg" alt="Hacksaw Ridge movie poster">
         </div>
 
         <div class="mySlides">
-          <div class="numbertext">3 / 8</div>
-          <img src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg" style="width:100%" alt="The Dark Knight Batman poster">
+          <div class="numbertext">3 / 9</div>
+          <img src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UX1000_.jpg" alt="The Dark Knight Batman poster">
         </div>
 
         <div class="mySlides">
-          <div class="numbertext">4 / 8</div>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Daddy_Yankee_2018.jpg/800px-Daddy_Yankee_2018.jpg" style="width:100%" alt="Daddy Yankee portrait">
+          <div class="numbertext">4 / 9</div>
+          <img src="https://i.scdn.co/image/ab6761610000e5eb2d53bf3bf334f59e9c8f2c33" alt="Daddy Yankee portrait">
         </div>
 
         <div class="mySlides">
-          <div class="numbertext">5 / 8</div>
-          <img src="https://preview.redd.it/rauw-alejandro-or-feid-whos-closer-to-bad-bunny-and-karol-v0-4sjq29pu2one1.jpeg?auto=webp&s=f7b816229f1dad049c532343d9841dc661ccd33c" style="width:100%" alt="Rauw Alejandro and Feid">
+          <div class="numbertext">5 / 9</div>
+          <img src="https://i.scdn.co/image/ab6761610000e5eb981ebef7491b61c9441e8c75" alt="Rauw Alejandro and Feid">
         </div>
 
         <div class="mySlides">
-          <div class="numbertext">6 / 8</div>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Mac_DeMarco_live_2013_%28cropped%29.jpg/800px-Mac_DeMarco_live_2013_%28cropped%29.jpg" style="width:100%" alt="Mac DeMarco live">
+          <div class="numbertext">6 / 9</div>
+          <img src="https://i.scdn.co/image/ab6761610000e5eb4f4640bfcc6c8c4f03947b74" alt="Mac DeMarco live">
         </div>
 
         <div class="mySlides">
-          <div class="numbertext">7 / 8</div>
-          <img src="https://hips.hearstapps.com/hmg-prod/images/pozole-index-655b86b9eeb3f.jpg?crop=0.502xw:1.00xh;0.0561xw,0&resize=1200:*" style="width:100%" alt="Bowl of Pozole">
+          <div class="numbertext">7 / 9</div>
+          <img src="https://images.squarespace-cdn.com/content/v1/52d881e3e4b09335f63934d4/1612457813359-V9L15US8G45SR17E0RDR/Pozole+Rojo+2.jpg" alt="Bowl of Pozole">
         </div>
 
         <div class="mySlides">
-          <div class="numbertext">8 / 8</div>
-          <img src="https://s3-media0.fl.yelpcdn.com/bphoto/oBCmqwWChVg6rZU-0tFECQ/l.jpg" style="width:100%" alt="Carne Asada Fries plate">
+          <div class="numbertext">8 / 9</div>
+          <img src="https://www.sandiegouniontribune.com/wp-content/uploads/2023/10/SDU-L-CARNE-ASADA-FRIES-01.jpg" alt="Carne Asada Fries plate">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">9 / 9</div>
+          <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/soccer-player-kicking-ball-in-stadium-getty-images.jpg" alt="Soccer player celebration">
         </div>
 
         <!-- Next/previous controls -->
@@ -143,30 +232,18 @@
         </div>
 
         <!-- Thumbnail image controls -->
-        <div class="column">
-          <img class="demo" src="https://images.wsj.net/im-504440?width=700&height=431" onclick="currentSlide(1)" alt="The Godfather: Cinematic masterpiece loved watching with my dad.">
+        <div class="modal-thumbnails">
+          <div class="column"><img class="demo" src="https://m.media-amazon.com/images/M/MV5BNGEwMTExEWEtOTc2MS00M2ZmLWExN2UtZjA3MDE2M2E3Yzc4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" onclick="currentSlide(1)" alt="The Godfather: My favorite film of all time because of its legendary storytelling and connection with my dad."></div>
+          <div class="column"><img class="demo" src="https://m.media-amazon.com/images/M/MV5BMjA1Nzk0OTM2OF5BMl5BanBnXkFtZTgwNjU2NjEwOTE@._V1_FMjpg_UX1000_.jpg" onclick="currentSlide(2)" alt="Hacksaw Ridge: An incredibly moving war film that demonstrates bravery and conviction."></div>
+          <div class="column"><img class="demo" src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UX1000_.jpg" onclick="currentSlide(3)" alt="The Dark Knight: The undisputed best superhero movie with iconic performances."></div>
+          <div class="column"><img class="demo" src="https://i.scdn.co/image/ab6761610000e5eb2d53bf3bf334f59e9c8f2c33" onclick="currentSlide(4)" alt="Daddy Yankee: The legend who defined reggaeton and my top listened-to artist."></div>
+          <div class="column"><img class="demo" src="https://i.scdn.co/image/ab6761610000e5eb981ebef7491b61c9441e8c75" onclick="currentSlide(5)" alt="Rauw & Feid: Two modern urban artists constantly on heavy rotation on my playlists."></div>
+          <div class="column"><img class="demo" src="https://i.scdn.co/image/ab6761610000e5eb4f4640bfcc6c8c4f03947b74" onclick="currentSlide(6)" alt="Mac DeMarco: My favorite indie artist for chill, relaxed vibes."></div>
+          <div class="column"><img class="demo" src="https://images.squarespace-cdn.com/content/v1/52d881e3e4b09335f63934d4/1612457813359-V9L15US8G45SR17E0RDR/Pozole+Rojo+2.jpg" onclick="currentSlide(7)" alt="Pozole: My top classic Mexican dish that reminds me of family gatherings."></div>
+          <div class="column"><img class="demo" src="https://www.sandiegouniontribune.com/wp-content/uploads/2023/10/SDU-L-CARNE-ASADA-FRIES-01.jpg" onclick="currentSlide(8)" alt="Carne Asada Fries: Hands down my favorite quick food bite after soccer games."></div>
+          <div class="column"><img class="demo" src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/soccer-player-kicking-ball-in-stadium-getty-images.jpg" onclick="currentSlide(9)" alt="Soccer: My favorite sport and main passion since age 4."></div>
         </div>
-        <div class="column">
-          <img class="demo" src="https://upload.wikimedia.org/wikipedia/en/8/8a/Hacksaw_Ridge_poster.png" onclick="currentSlide(2)" alt="Hacksaw Ridge: Deeply emotional war film demonstrating bravery.">
-        </div>
-        <div class="column">
-          <img class="demo" src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg" onclick="currentSlide(3)" alt="The Dark Knight: Best superhero film with iconic Joker performance.">
-        </div>
-        <div class="column">
-          <img class="demo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Daddy_Yankee_2018.jpg/800px-Daddy_Yankee_2018.jpg" onclick="currentSlide(4)" alt="Daddy Yankee: The king who defined reggaeton.">
-        </div>
-        <div class="column">
-          <img class="demo" src="https://preview.redd.it/rauw-alejandro-or-feid-whos-closer-to-bad-bunny-and-karol-v0-4sjq29pu2one1.jpeg?auto=webp&s=f7b816229f1dad049c532343d9841dc661ccd33c" onclick="currentSlide(5)" alt="Rauw & Feid: Modern urban artists on heavy playlist rotation.">
-        </div>
-        <div class="column">
-          <img class="demo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Mac_DeMarco_live_2013_%28cropped%29.jpg/800px-Mac_DeMarco_live_2013_%28cropped%29.jpg" onclick="currentSlide(6)" alt="Mac DeMarco: Top indie artist for relaxed vibes.">
-        </div>
-        <div class="column">
-          <img class="demo" src="https://hips.hearstapps.com/hmg-prod/images/pozole-index-655b86b9eeb3f.jpg?crop=0.502xw:1.00xh;0.0561xw,0&resize=1200:*" onclick="currentSlide(7)" alt="Pozole: Classic traditional Mexican dish.">
-        </div>
-        <div class="column">
-          <img class="demo" src="https://s3-media0.fl.yelpcdn.com/bphoto/oBCmqwWChVg6rZU-0tFECQ/l.jpg" onclick="currentSlide(8)" alt="Carne Asada Fries: Ultimate comfort food after soccer matches.">
-        </div>
+
       </div>
     </div>
     <p>&nbsp;</p>
@@ -180,12 +257,10 @@
 
   <!-- Lightbox JavaScript -->
   <script>
-    // Open the Modal
     function openModal() {
       document.getElementById("myModal").style.display = "block";
     }
 
-    // Close the Modal
     function closeModal() {
       document.getElementById("myModal").style.display = "none";
     }
@@ -193,12 +268,10 @@
     var slideIndex = 1;
     showSlides(slideIndex);
 
-    // Next/previous controls
     function plusSlides(n) {
       showSlides(slideIndex += n);
     }
 
-    // Thumbnail image controls
     function currentSlide(n) {
       showSlides(slideIndex = n);
     }
@@ -217,8 +290,10 @@
         dots[i].className = dots[i].className.replace(" active", "");
       }
       slides[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " active";
-      captionText.innerHTML = dots[slideIndex-1].alt;
+      if (dots[slideIndex-1]) {
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+      }
     }
   </script>
 </body>

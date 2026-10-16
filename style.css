@@ -32,13 +32,23 @@ img {
 
 /* Header & Navigation */
 #header {
-  background-image: url("images/hero.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                    url('https://npr.brightspotcdn.com/dims4/default/d15de49/2147483647/strip/true/crop/2560x1707+0+0/resize/880x587!/quality/90/?url=https%3A%2F%2Fmedia.wbur.org%2Fwp%2F2023%2F06%2FAP23158761144527-scaled.jpg');
   text-align: center;
   color: #ffffff;
-  height: 150px;
+  height: 200px; /* Increased height slightly so the banner image shows nicely */
+  background-size: cover;
   background-repeat: no-repeat;
-  padding: 20px 25px 15px 25px;
+  padding: 30px 25px;
   background-position: center;
+}
+
+#header h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+#header h2 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 #content {
